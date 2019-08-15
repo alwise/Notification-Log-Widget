@@ -1,2 +1,2 @@
 # Notification-Log-Widget
- Test Widget created by for Notification Log
+ Test Widget created by Elvis Kemevor for Notification Log
