@@ -19,7 +19,6 @@ public class NotificationListWidget extends AppWidgetProvider {
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
 
-        //Intent serviceIntent = new Intent(context,ExampleWidgetService.class);
         CharSequence widgetText = context.getString(R.string.app_name);
         // Construct the RemoteViews object
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.notification_list_widget);
@@ -59,7 +58,7 @@ public class NotificationListWidget extends AppWidgetProvider {
 
     @Override
     public void onEnabled(Context context) {
-        // Enter relevant functionality for when the first widget is creat
+        // Enter relevant functionality for when the first widget is created
         super.onEnabled(context);
     }
 

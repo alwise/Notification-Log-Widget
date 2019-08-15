@@ -44,7 +44,6 @@ public class ExampleWidgetService extends RemoteViewsService {
         BrowseAdapter.DataItem item;
         Cursor cursor;
         private final static String DATA_LIMIT = "15";
-        Handler handler = new Handler();
 
 
         ExampleWidgetAdapter(Context context, Intent intent) {
