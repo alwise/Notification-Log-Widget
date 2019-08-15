@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Icon;
@@ -89,8 +90,7 @@ public class ExampleWidgetService extends RemoteViewsService {
             if(iconCache.containsKey(item.getPackageName()) && iconCache.get(item.getPackageName()) != null) {
                 Drawable d = iconCache.get(item.getPackageName());
                 assert d != null;
-                Bitmap bitmap = ((BitmapDrawable)d).getBitmap();
-                views.setImageViewBitmap(R.id.item_icon,bitmap);
+                views.setImageViewBitmap(R.id.item_icon,getBitmap(d));
             } else {
                 views.setImageViewResource(R.id.item_icon,R.mipmap.ic_launcher_round);
             }
@@ -155,5 +155,24 @@ public class ExampleWidgetService extends RemoteViewsService {
 
         }
 
+        /**
+         * converts drawable to bitmap using ARGB_8888
+         * @param drawable : the drawable to draw into bitmap
+         * @return bitmap
+         */
+        private Bitmap getBitmap(Drawable drawable){
+            try {
+                Bitmap bitmap;
+                bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(), drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+
+                Canvas canvas = new Canvas(bitmap);
+                drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+                drawable.draw(canvas);
+                return bitmap;
+            } catch (OutOfMemoryError e) {
+                // Handle the error here
+                return null;
+            }
+        }
     }
 }
