@@ -54,6 +54,7 @@
         android:contentDescription="@string/app_name"
         android:padding="2dp"
         android:text="View All>>"
+        tools:ignore="HardcodedText"
         android:textColor="#F57C00"
         android:textSize="14sp"
         android:textStyle="bold" />
