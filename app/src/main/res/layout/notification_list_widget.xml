@@ -44,7 +44,7 @@
         tools:listitem="@layout/item_browse" />
 
     <TextView
-        android:id="@+id/clickable_widget_Text"
+        android:id="@+id/view_all_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"

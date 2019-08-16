@@ -7,9 +7,14 @@
     android:layout_height="match_parent"
     android:layout_margin="5dp"
     android:background="@color/colorPrimary"
-    tools:ignore="UseCompoundDrawables"
-    android:clickable="true"
-    android:focusable="true">
+    tools:ignore="UseCompoundDrawables">
+
+    <TextView
+        android:id="@+id/widget_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        />
 
     <ImageView
         android:id="@+id/item_icon"
@@ -30,7 +35,6 @@
         android:layout_marginStart="45dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="3dp"
-        android:layout_marginRight="3dp"
         android:padding="3dp"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
